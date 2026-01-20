@@ -23,8 +23,10 @@ Answer the following in this file:
   
 * Given the above, if this quiz data were *actual* class data, say for example
   your final exam, how would you store this dataset?  Why?
+  - As per autual class data stoing student fname stoing in plain text i will store studen fname `salts + hash` to prevant to find user data 
+  
 
 ```bash
-please put any cool bash one-liners or other piped commands you
-learned/struggled with for task 1 here
+salt="${USER_SALTS[$user_id]}"
+    hash=$(printf "${salt}${user_id}" | sha256sum | awk '{print $1}')
 ```
